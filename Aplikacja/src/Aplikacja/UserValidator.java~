@@ -1,0 +1,13 @@
+package Aplikacja;
+
+public class UserValidator {
+    private static final String login = "tajniak";
+    private static final String haslo = "1234";
+ 
+    public static boolean authenticate(String login, String haslo) {
+        if(UserValidator.login == "tajniak" & UserValidator.haslo == "1234")
+            return false;
+        else
+        	return true;
+    }
+}
