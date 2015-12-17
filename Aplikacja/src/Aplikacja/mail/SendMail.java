@@ -11,15 +11,15 @@ package Aplikacja.mail;
 
         private static final String HOST = "smtp.gmail.com";
         private static final int PORT = 465;
-        // Adres email osby która wysy³a maila
+        // Adres email osby ktÃ³ra wysyÂ³a maila
         private static final String FROM = "wybierznazwe.natalia@gmail.com"; 
-        // Has³o do konta osoby która wysy³a maila podajemy w konsoli
-        // Adres email osoby do której wysy³any jest mail
+        // HasÂ³o do konta osoby ktÃ³ra wysyÂ³a maila podajemy w konsoli
+        // Adres email osoby do ktÃ³rej wysyÂ³any jest mail
         private static final String TO = ("nataliaaaxd@wp.pl");
-        // Temat wiadomoœci
+        // Temat wiadomoÅ“ci
         private static final String SUBJECT = "Java Witaj:)";
-        // Treœæ wiadomoœci
-        private static final String CONTENT = "Witaj œwiecie, dzia³a to czy nie ?:)";
+        // TreÅ“Ã¦ wiadomoÅ“ci
+        private static final String CONTENT = "Witaj Å“wiecie, dziaÂ³a to czy nie ?:)";
         String password = Okno.getPassword(); //pobranie password z klasy Okno
         @SuppressWarnings("resource")
         public void send() throws MessagingException {
@@ -28,11 +28,11 @@ package Aplikacja.mail;
              props.put("mail.smtps.auth", "true");
             // Inicjalizacja sesji
             Session mailSession = Session.getDefaultInstance(props);
-             // ustawienie debagowania, jeœli nie chcesz ogl¹daæ logów to usuñ
-            // linijkê poni¿ej lub zmieñ wartoœæ na false
+             // ustawienie debagowania, jeÅ“li nie chcesz oglÂ¹daÃ¦ logÃ³w to usuÃ±
+            // linijkÃª poniÂ¿ej lub zmieÃ± wartoÅ“Ã¦ na false
              mailSession.setDebug(true);
 
-             // Tworzenie wiadomoœci email
+             // Tworzenie wiadomoÅ“ci email
              MimeMessage message = new MimeMessage(mailSession);
              message.setSubject(SUBJECT);
             message.setContent(CONTENT, "text/plain; charset=ISO-8859-2");
@@ -41,7 +41,7 @@ package Aplikacja.mail;
             Transport transport = mailSession.getTransport();
              transport.connect(HOST, PORT, FROM, password);
 
-             // wys³anie wiadomoœci
+             // wyslanie wiadomoÅ“ci
              transport.sendMessage(message, message.getRecipients(Message.RecipientType.TO));
              transport.close();
             }
